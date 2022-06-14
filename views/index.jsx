@@ -10,7 +10,7 @@ const Index = ({breads}) => {
             {
                 breads.map((bread, index)=> {
                     return (<li key={index}>
-                     <a>
+                     <a href={`/breads/${index}`}>
                         {bread.name}
                      </a>   
                     </li>)
