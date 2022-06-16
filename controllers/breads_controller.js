@@ -12,7 +12,6 @@ breads.get("/", (req, res) => {
 });
 
 // create
-// CREATE
 breads.post("/", (req, res) => {
   if (!req.body.image) {
     req.body.image =

@@ -10,7 +10,7 @@ const New = () => {
         <input type="text" name="name" id="name"
         required />
         <label htmlFor="image">image</label>
-        <input type="text" name="image" id="image" />
+        <input type="texturl" name="image" id="image" pattern="https?://.+" title="Include http://" />
         <label htmlFor="hasGluten">Has Gluten?</label>
         <input type="checkbox" name="hasGluten" id="hasGluten" defaultChecked />
         <br />
