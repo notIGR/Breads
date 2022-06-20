@@ -40,7 +40,7 @@ breads.get("/new", (req, res) => {
 //edit
 breads.get("/:indexArray/edit", (req, res) => {
   res.render("edit", {
-    bread: Bread[req.params.indexAArray],
+    bread: Bread[req.params.indexArray],
     index: req.params.indexArray,
   });
 });
