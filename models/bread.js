@@ -7,7 +7,11 @@ const { Schema } = mongoose;
 const breadSchema = new Schema({
   name: { type: String, required: true },
   hasGluten: Boolean,
-  image: { type: String, default: "https://images-gmi-pmc.edge-generalmills.com/6ef7a9a1-08dc-4e94-8de9-10c4002103a5.jpg" },
+  image: {
+    type: String,
+    default:
+      "https://media.istockphoto.com/photos/french-pastry-picture-id645542956?s=612x612",
+  },
 });
 
 // model and export
