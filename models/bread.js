@@ -7,10 +7,10 @@ const { Schema } = mongoose;
 const breadSchema = new Schema({
   name: { type: String, required: true },
   hasGluten: Boolean,
-  image: {
+  image: { type: String, default: "http://placehold.it/500x500.png" },
+  baker: {
     type: String,
-    default:
-      "https://media.istockphoto.com/photos/french-pastry-picture-id645542956?s=612x612",
+    enum: ["Rachel", "Monica", "Joey", "Chandler", "Ross", "Phoebe"],
   },
 });
 
