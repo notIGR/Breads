@@ -13,12 +13,13 @@ const Show = ({ bread }) => {
         have gluten.
       </p>
       <img src={bread.image} alt={bread.name} />
-      <form action={`/breads/${bread.id}?_method=DELETE`} method="POST">
-        <input type="submit" value="DELETE" />
-      </form>
+      <p>{bread.getBakedBy()}</p>
       <a href={`/breads/${bread.id}/edit`}>
         <button>Edit</button>
       </a>
+      <form action={`/breads/${bread.id}?_method=DELETE`} method="POST">
+        <input type="submit" value="DELETE" />
+      </form>
       <li>
         <a href="/breads">DONKEY! Get out of my swamp!</a>
       </li>
