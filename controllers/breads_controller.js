@@ -29,9 +29,10 @@ breads.post("/", (req, res) => {
 });
 
 //delete
-breads.delete("/:indexArray", (req, res) => {
-  Bread.splice(req.params.indexArray, 1);
-  res.status(303).redirect("/breads");
+breads.delete("/:id", (req, res) => {
+  Bread.findByIdAndDelete(req.params.id).then((deletedBread) => {
+    res.status(303).redirect("/breads");
+  });
 });
 
 //new
