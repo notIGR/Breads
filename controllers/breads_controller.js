@@ -47,9 +47,12 @@ breads.get("/new", (req, res) => {
 
 //edit
 breads.get("/:id/edit", (req, res) => {
-  Bread.findById(req.params.id).then((foundBread) => {
-    res.render("edit", {
-      bread: foundBread,
+  Baker.find().then((foundBakers) => {
+    Bread.findById(req.params.id).then((foundBread) => {
+      res.render("edit", {
+        bread: foundBread,
+        bakers: foundBakers,
+      });
     });
   });
 });
@@ -70,7 +73,6 @@ breads.put("/:id", (req, res) => {
 });
 
 //show
-// SHOW
 breads.get("/:id", (req, res) => {
   Bread.findById(req.params.id)
     .populate("baker")
