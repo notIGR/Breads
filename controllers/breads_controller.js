@@ -4,16 +4,21 @@ const Bread = require("../models/bread.js");
 const Baker = require("../models/baker.js");
 
 //index
-breads.get("/", (req, res) => {
-  Bread.find().then((foundBreads) => {
-    res.render("Index", {
-      breads: foundBreads,
-      title: "Index Page",
-    });
-  });
+// Index:
+breads.get('/', (req, res) => {
+  Baker.find()
+    .then(foundBakers => {
+      Bread.find()
+        .then(foundBreads => {
+          res.render('index', {
+            breads: foundBreads,
+            bakers: foundBakers,
+            title: 'Index Page'
+          })
+        })
+    })
+})
 
-  //res.send(Bread)
-});
 
 // create
 breads.post("/", (req, res) => {
