@@ -43,5 +43,3 @@ const New = ({ bakers }) => {
 };
 
 module.exports = New;
-
-module.exports = New;
